@@ -6,7 +6,7 @@ public class Server {
 
     try {
       Adder adder = new Adder();
-      String url = "rmi://127.0.0.1:1099/adder";
+      String url = "rmi://10.0.2.4:1099/adder";
       Naming.rebind(url, adder);
       System.out.println("Server listening...");
 
