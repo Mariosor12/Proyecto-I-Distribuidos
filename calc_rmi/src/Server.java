@@ -4,7 +4,7 @@ import java.rmi.Naming;
 public class Server {
   public static void main(String[] args) {
     System.out.println("Launching server...");
-    // System.setProperty("java.rmi.server.hostname", "192.168.56.103");
+    System.setProperty("java.rmi.server.hostname", Constants.IP);
 
     try {
       Adder adder = new Adder();
