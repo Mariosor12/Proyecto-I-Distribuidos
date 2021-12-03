@@ -6,8 +6,7 @@ public class Client {
     int b = 5;
 
     try {
-      String url = "rmi://192.168.56.103/adder";
-      IAdder remote = (IAdder) Naming.lookup(url);
+      IAdder remote = (IAdder) Naming.lookup(Constants.URL);
       System.out.println("10 + 5 = " + remote.add(a, b));
     } catch (Exception e) {
       e.printStackTrace();
