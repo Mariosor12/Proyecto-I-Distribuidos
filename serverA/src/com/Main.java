@@ -25,7 +25,6 @@ public class Main {
             // System.out.println(books);
             // System.out.println(elPrincipito);
 
-            System.exit(0);
         } catch (Exception e) {
             e.printStackTrace();
         }

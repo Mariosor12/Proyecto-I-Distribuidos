@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<bibliotecas>
+	<bibliotecaA>
+		<book>
+			<libro>El Principito</libro>
+			<autor>Antoine de Saint-Exupéry</autor>
+		</book>
+		<book>
+			<libro>Great Circle</libro>
+			<autor>Maggie Shipstead</autor>
+		</book>
+		<book>
+			<libro>Dune</libro>
+			<autor>Frank Herbert</autor>
+		</book>
+	</bibliotecaA>
+</bibliotecas>
