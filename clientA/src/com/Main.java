@@ -4,7 +4,6 @@ import java.rmi.Naming;
 import java.util.*;
 
 import com.books.services.IBooksService;
-import com.books.domain.Book;
 
 public class Main {
     public static void main(String[] args) {
