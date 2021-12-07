@@ -4,14 +4,20 @@
 		<book>
 			<libro>El Principito</libro>
 			<autor>Antoine de Saint-Exupéry</autor>
+			<editorial>Reynal and Hitchcock</editorial>
+			<fecha>07/04/1943</fecha>
 		</book>
 		<book>
 			<libro>Great Circle</libro>
 			<autor>Maggie Shipstead</autor>
+			<editorial>Amazon</editorial>
+			<fecha>04/05/2021</fecha>
 		</book>
 		<book>
 			<libro>Dune</libro>
 			<autor>Frank Herbert</autor>
+			<editorial>Chilton</editorial>
+			<fecha>29/12/1965</fecha>
 		</book>
 	</bibliotecaA>
 </bibliotecas>

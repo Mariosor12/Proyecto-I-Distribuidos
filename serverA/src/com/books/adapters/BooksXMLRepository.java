@@ -26,8 +26,10 @@ public class BooksXMLRepository extends XMLParser {
 
         String libro = element.getElementsByTagName("libro").item(0).getTextContent();
         String autor = element.getElementsByTagName("autor").item(0).getTextContent();
+        String editorial = element.getElementsByTagName("editorial").item(0).getTextContent();
+        String fecha = element.getElementsByTagName("fecha").item(0).getTextContent();
 
-        books.add(new Book(libro, autor));
+        books.add(new Book(libro, autor, editorial, fecha));
       }
     }
 
