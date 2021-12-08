@@ -14,7 +14,7 @@ public class AuthorsXMLRepository extends XMLParser {
   }
 
   public List<Author> getAuthors() {
-    NodeList nodeList = this.document.getElementsByTagName("author");
+    NodeList nodeList = this.document.getElementsByTagName("book");
     List<Author> authors = new ArrayList<Author>();
 
     for (int i = 0; i < nodeList.getLength(); i++) {
