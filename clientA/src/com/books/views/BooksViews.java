@@ -4,8 +4,8 @@ import java.util.*;
 
 import com.books.domain.Book;
 
-class BooksViews {
-  public static final String errorMessage = "No hay libros disponibles con la descripción solicitada";
+public class BooksViews {
+  public static final String errorMessage = "No books found";
 
   public BooksViews() {
 

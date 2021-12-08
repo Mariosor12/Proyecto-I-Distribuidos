@@ -20,7 +20,7 @@ public class Book implements Serializable {
 
   public String toString() {
     return this.name + " - " + this.author + " - " + this.editorial + " - "
-        + this.date + " (lib " + this.library + ")\n";
+        + this.date + " (lib " + this.library + ")";
   }
 
   public String getName() {
