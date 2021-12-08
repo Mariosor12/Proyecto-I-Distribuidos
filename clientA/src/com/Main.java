@@ -15,7 +15,7 @@ public class Main {
         boolean exit = false;
 
         int option;
-
+        while(!exit){
         System.out.println("1. Author");
         System.out.println("2. Book");
         System.out.println("3. Exit");
@@ -30,26 +30,22 @@ public class Main {
                     System.out.print("Author name? ");
                     String authorName = scanner2.nextLine();
 
-                    scanner2.close();
-
                     try {
                         IBooksService booksService = (IBooksService) Naming.lookup(Constants.URL);
-
                         booksViews.printBooks(booksService.getBooksByAuthor(authorName));
+                        System.out.println("");
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
                     break;
-
                 case 2:
                     System.out.print("Book name? ");
                     String authorName2 = scanner2.nextLine();
 
-                    scanner2.close();
-
                     try {
                         IBooksService booksService = (IBooksService) Naming.lookup(Constants.URL);
                         booksViews.printBook(booksService.getBookByName(authorName2));
+                        System.out.println("");
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
@@ -59,13 +55,16 @@ public class Main {
                     exit = true;
                     break;
                 default:
-                    System.out.println("Solo números entre 1 y 4");
+                    System.out.println("Only numbers between 1 and 3");
             }
         } catch (InputMismatchException e) {
             System.out.println("A number between 1 and 3 must be inserted");
             scanner.next();
         }
-
+    }
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
         scanner.close();
+        scanner2.close();
     }
 }
