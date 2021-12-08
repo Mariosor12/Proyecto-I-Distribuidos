@@ -7,21 +7,28 @@ public class Book implements Serializable {
   String name;
   String author;
   String editorial;
-  String fecha;
+  String date;
+  String library;
 
-  public Book(String name, String author, String editorial, String fecha) {
+  public Book(String name, String author, String editorial, String date, String library) {
     this.name = name;
     this.author = author;
     this.editorial = editorial;
-    this.fecha = fecha;
+    this.date = date;
+    this.library = library;
   }
 
   public String toString() {
-    return this.name + " - " + this.author+ " - " + this.editorial + " - " + this.fecha;
+    return this.name + " - " + this.author + " - " + this.editorial + " - "
+        + this.date + " (lib " + this.library + ")\n";
   }
 
   public String getName() {
     return this.name;
+  }
+
+  public String getAuthor() {
+    return this.author;
   }
 
 }
