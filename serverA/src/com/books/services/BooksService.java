@@ -29,4 +29,16 @@ public class BooksService extends UnicastRemoteObject implements IBooksService {
 
     return null;
   }
+
+  public List<Book> getBooksByAuthor(String author) {
+    List<Book> books = new ArrayList<Book>();
+
+    for (Book book : this.books) {
+      if (author.equals(book.getAuthor())) {
+        books.add(book);
+      }
+    }
+
+    return books;
+  }
 }

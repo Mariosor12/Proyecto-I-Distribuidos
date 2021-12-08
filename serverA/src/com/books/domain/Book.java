@@ -7,13 +7,13 @@ public class Book implements Serializable {
   String name;
   String author;
   String editorial;
-  String fecha;
+  String date;
 
-  public Book(String name, String author, String editorial, String fecha) {
+  public Book(String name, String author, String editorial, String date) {
     this.name = name;
     this.author = author;
     this.editorial = editorial;
-    this.fecha = fecha;
+    this.date = date;
   }
 
   public String toString() {
@@ -22,6 +22,10 @@ public class Book implements Serializable {
 
   public String getName() {
     return this.name;
+  }
+
+  public String getAuthor() {
+    return this.author;
   }
 
 }
