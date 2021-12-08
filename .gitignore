@@ -1,3 +1,4 @@
 .vscode
 .idea
-**/Constants.*
+**/Constants.java
+**/Constants.class
