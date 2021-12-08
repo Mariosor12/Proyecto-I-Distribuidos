@@ -1,10 +1,8 @@
 package com;
 
 import java.rmi.Naming;
-import java.util.List;
 
 import com.books.services.BooksService;
-import com.books.domain.Book;
 
 public class Main {
     public static void main(String[] args) {
