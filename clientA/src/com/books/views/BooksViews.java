@@ -8,7 +8,16 @@ public class BooksViews {
   public static final String errorMessage = "No books found";
 
   public BooksViews() {
+  }
 
+  public String getStringInput(String prompt) {
+    Scanner scanner = new Scanner(System.in);
+
+    String input = scanner.nextLine();
+
+    scanner.close();
+
+    return input;
   }
 
   private void printNotFound() {
