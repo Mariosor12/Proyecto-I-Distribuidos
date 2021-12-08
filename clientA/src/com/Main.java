@@ -12,6 +12,7 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in);
         Scanner scanner2 = new Scanner(System.in);
+        Scanner scanner3 = new Scanner(System.in);
         boolean exit = false;
 
         int option;
@@ -20,6 +21,10 @@ public class Main {
         System.out.println("2. Book");
         System.out.println("3. Exit");
 
+        System.out.println("Choose the library");
+        String library = scanner3.nextLine();
+
+        if(library == ""){
         try {
 
             System.out.println("Choose one of the options above");
@@ -62,9 +67,11 @@ public class Main {
             scanner.next();
         }
     }
+    }
         System.out.print("\033[H\033[2J");
         System.out.flush();
         scanner.close();
         scanner2.close();
+        scanner3.close();
     }
 }
