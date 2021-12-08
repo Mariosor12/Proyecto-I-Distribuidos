@@ -28,7 +28,7 @@ public class Trace {
         SimpleDateFormat df = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
         try {
             //Buscamos el archivo, si no esta se crea
-            archivo = new File("C:/Users/pancho/Documents/GitHub/Proyecto-I-Distribuidos/clientA/src/com/log/Slogs.txt");
+            archivo = new File("/home/mario/Proyecto-I-Distribuidos/serverA/src/com/log/Slogs.txt");
             fw = new FileWriter(archivo, true);
             BufferedWriter bw = new BufferedWriter(fw);
             //Escribmos el log para cuando se vaya a realizar una respuesta
