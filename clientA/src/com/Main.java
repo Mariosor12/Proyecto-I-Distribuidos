@@ -5,11 +5,12 @@ import java.util.*;
 
 import com.books.services.IBooksService;
 import com.books.views.BooksViews;
+import com.Trace.Trace;
 
 public class Main {
     public static void main(String[] args) {
         BooksViews booksViews = new BooksViews();
-
+        Trace trace;
         Scanner scanner = new Scanner(System.in);
         Scanner scanner2 = new Scanner(System.in);
         Scanner scanner3 = new Scanner(System.in);
@@ -23,8 +24,10 @@ public class Main {
 
         System.out.println("Choose the library");
         String library = scanner3.nextLine();
+        String biblioteca = library;
+        System.out.println(library);
 
-        if(library == ""){
+        if((biblioteca == "") || (biblioteca == "A") || (biblioteca == "a")) {
         try {
 
             System.out.println("Choose one of the options above");
@@ -39,6 +42,8 @@ public class Main {
                         IBooksService booksService = (IBooksService) Naming.lookup(Constants.URL);
                         booksViews.printBooks(booksService.getBooksByAuthor(authorName));
                         System.out.println("");
+                        trace = new Trace("A", "getBooksByAuthor", authorName, new Date());
+                        trace.guardarTraza();
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
@@ -51,6 +56,8 @@ public class Main {
                         IBooksService booksService = (IBooksService) Naming.lookup(Constants.URL);
                         booksViews.printBook(booksService.getBookByName(authorName2));
                         System.out.println("");
+                        trace = new Trace("A", "getBookByName", authorName2, new Date());
+                        trace.guardarTraza();
                     } catch (Exception e) {
                         e.printStackTrace();
                     }

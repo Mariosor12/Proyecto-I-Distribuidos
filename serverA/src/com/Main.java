@@ -10,10 +10,10 @@ public class Main {
         System.setProperty("java.rmi.server.hostname", Constants.IP);
 
         try {
+            
             BooksService booksService = new BooksService();
             Naming.rebind(Constants.URL, booksService);
             System.out.println("Library A Server listening (" + Constants.IP + ")");
-
         } catch (Exception e) {
             e.printStackTrace();
         }

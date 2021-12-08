@@ -6,10 +6,12 @@ import java.util.*;
 
 import com.books.adapters.BooksXMLRepository;
 import com.books.domain.Book;
+import com.Trace.Trace;
 
 public class BooksService extends UnicastRemoteObject implements IBooksService {
   BooksXMLRepository booksRepository = new BooksXMLRepository();
   List<Book> books;
+  Trace trace;
 
   public BooksService() throws RemoteException {
     super();
