@@ -17,7 +17,7 @@ public class Book implements Serializable {
   }
 
   public String toString() {
-    return this.name + " - " + this.author + " - " + this.editorial + " - " + this.fecha;
+    return this.name + " - " + this.author + " - " + this.editorial + " - " + this.date;
   }
 
   public String getName() {
