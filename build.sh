@@ -24,6 +24,8 @@ cp Constants.java server$lib/src/com
 cp Constants.java client$lib/src/com
 rm -f Constants.java
 
+echo "Constants file created with IP $1"
+
 cd server$lib
 bash compile.sh
 echo "Server $lib compiled successfully"
