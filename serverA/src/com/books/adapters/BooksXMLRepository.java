@@ -13,6 +13,10 @@ public class BooksXMLRepository extends XMLParser {
     getBooks();
   }
 
+  private String getElementByTagName(Element element, String tagName) {
+    return element.getElementsByTagName(tagName).item(0).getTextContent();
+  }
+
   public List<Book> getBooks() {
     NodeList nodeList = this.document.getElementsByTagName("book");
     List<Book> books = new ArrayList<Book>();
@@ -24,10 +28,10 @@ public class BooksXMLRepository extends XMLParser {
 
         Element element = (Element) node;
 
-        String libro = element.getElementsByTagName("libro").item(0).getTextContent();
-        String autor = element.getElementsByTagName("autor").item(0).getTextContent();
-        String editorial = element.getElementsByTagName("editorial").item(0).getTextContent();
-        String fecha = element.getElementsByTagName("fecha").item(0).getTextContent();
+        String libro = getElementByTagName(element, "libro");
+        String autor = getElementByTagName(element, "autor");
+        String editorial = getElementByTagName(element, "editorial");
+        String fecha = getElementByTagName(element, "fecha");
 
         books.add(new Book(libro, autor, editorial, fecha, "A"));
       }
