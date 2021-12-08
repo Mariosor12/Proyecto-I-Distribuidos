@@ -8,16 +8,18 @@ public class Book implements Serializable {
   String author;
   String editorial;
   String date;
+  String library;
 
-  public Book(String name, String author, String editorial, String date) {
+  public Book(String name, String author, String editorial, String date, String library) {
     this.name = name;
     this.author = author;
     this.editorial = editorial;
     this.date = date;
+    this.library = library;
   }
 
   public String toString() {
-    return this.name + " - " + this.author + " - " + this.editorial + " - " + this.date;
+    return this.name + " - " + this.author + " - " + this.editorial + " - " + this.date + " (lib " + this.library + ")";
   }
 
   public String getName() {
