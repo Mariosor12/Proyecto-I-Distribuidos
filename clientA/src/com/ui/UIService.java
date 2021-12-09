@@ -1,6 +1,6 @@
 package com.ui;
 
-import com.Trace.*;
+import com.trace.*;
 import java.util.*;
 
 public class UIService {
@@ -13,6 +13,6 @@ public class UIService {
 
   public void saveTrace(String library, String method, String lookUpValue) {
     Trace trace = new Trace(library, method, lookUpValue, new Date());
-    trace.guardarTraza();
+    trace.saveTrace();
   }
 }

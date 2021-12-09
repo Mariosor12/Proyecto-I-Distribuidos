@@ -6,7 +6,7 @@ import java.util.*;
 import com.books.services.IBooksService;
 import com.books.views.BooksViews;
 import com.ui.UIService;
-import com.Trace.Trace;
+import com.trace.Trace;
 
 public class Main {
     private static IBooksService remoteService(String URL) {
@@ -46,7 +46,7 @@ public class Main {
                             String bookTitle = "Dune";
 
                             booksViews.printBook(booksService.getBookByName(bookTitle));
-                            // ui.saveTrace(library, "getBookByName", bookTitle);
+                            ui.saveTrace(library, "getBookByName", bookTitle);
                             break;
                         case 2:
                             ui.print("Author name?");
