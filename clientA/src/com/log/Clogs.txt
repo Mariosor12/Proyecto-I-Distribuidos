@@ -4,3 +4,5 @@ Destino: Biblioteca A - Metodo: getBooksByAuthor - Peticion: Frank Herbert - Fec
 Destino: Biblioteca A - Metodo: getBookByName - Peticion: Dune - Fecha: 12/08/2021 18:21:20
 Destino: Biblioteca A - Metodo: getBooksByAuthor - Peticion: Frank Herbert - Fecha: 12/08/2021 18:56:40
 Destino: Biblioteca A - Metodo: getBookByName - Peticion: Dune - Fecha: 12/08/2021 18:56:45
+Destino: Biblioteca A - Metodo: getBooksByAuthor - Peticion: Frank Herbert - Fecha: 12/08/2021 22:19:27
+Destino: Biblioteca A - Metodo: getBooksByAuthor - Peticion: Frank Herbert - Fecha: 12/08/2021 23:34:54

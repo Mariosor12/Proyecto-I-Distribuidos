@@ -24,10 +24,9 @@ public class Main {
 
         System.out.println("Choose the library");
         String library = scanner3.nextLine();
-        String biblioteca = library;
-        System.out.println(library);
 
-        if((biblioteca == "") || (biblioteca == "A") || (biblioteca == "a")) {
+        switch (library) {
+            case "A":
         try {
 
             System.out.println("Choose one of the options above");
@@ -73,6 +72,54 @@ public class Main {
             System.out.println("A number between 1 and 3 must be inserted");
             scanner.next();
         }
+        break;
+        case "":
+        try {
+
+            System.out.println("Choose one of the options above");
+            option = scanner.nextInt();
+
+            switch (option) {
+                case 1:
+                    System.out.print("Author name? ");
+                    String authorName = scanner2.nextLine();
+
+                    try {
+                        IBooksService booksService = (IBooksService) Naming.lookup(Constants.URL);
+                        booksViews.printBooks(booksService.getBooksByAuthor(authorName));
+                        System.out.println("");
+                        trace = new Trace("A", "getBooksByAuthor", authorName, new Date());
+                        trace.guardarTraza();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                    break;
+                case 2:
+                    System.out.print("Book name? ");
+                    String authorName2 = scanner2.nextLine();
+
+                    try {
+                        IBooksService booksService = (IBooksService) Naming.lookup(Constants.URL);
+                        booksViews.printBook(booksService.getBookByName(authorName2));
+                        System.out.println("");
+                        trace = new Trace("A", "getBookByName", authorName2, new Date());
+                        trace.guardarTraza();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                    break;
+
+                case 3:
+                    exit = true;
+                    break;
+                default:
+                    System.out.println("Only numbers between 1 and 3");
+            }
+        } catch (InputMismatchException e) {
+            System.out.println("A number between 1 and 3 must be inserted");
+            scanner.next();
+        }
+        break;
     }
     }
         System.out.print("\033[H\033[2J");
