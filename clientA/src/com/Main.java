@@ -21,7 +21,7 @@ public class Main {
         try {
             switch (library) {
                 case "A":
-                    IBooksService booksService = (IBooksService) Naming.lookup(Constants.URL);
+                    IBooksService booksService = (IBooksService) Naming.lookup(Constants.URL_C);
 
                     ui.print("1. Get Book by title");
                     ui.print("2. Get Books by author");
