@@ -1,8 +1,9 @@
-lib=A
-
 touch Constants.java
 
-if [ -z $1 ]
+ip=$1
+lib=$2
+
+if [ -z $ip ]
 then
   echo "ERROR: No IP address was provided"
   exit 1
@@ -15,7 +16,7 @@ public final class Constants {
   private Constants() {
   }
 
-  public static final String IP = "$1";
+  public static final String IP = "$ip";
   public static final String URL = "rmi://" + IP + "/lib$lib";
 }
 EOF
