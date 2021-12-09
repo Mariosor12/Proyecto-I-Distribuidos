@@ -68,7 +68,7 @@ public class Main {
                     booksService = remoteService(Constants.URL_B);
 
                     ui.print("Available commands for library " + library);
-                    ui.print("1. Buscar Titulo [LIBRO]");
+                    ui.print("1. Buscar Titulo [TITULO]");
                     ui.print("2. Buscar Autor [AUTOR]");
 
                     // command = scanner.nextInt();
