@@ -10,7 +10,7 @@ public class XMLParser {
   Document document;
 
   XMLParser() {
-    File booksDatabase = new File("database/bibliotecaA.xml");
+    File booksDatabase = new File("database/bibliotecaB.xml");
     DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
 
     try {
