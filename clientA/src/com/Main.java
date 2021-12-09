@@ -59,7 +59,7 @@ public class Main {
                         ui.saveTrace(library, "getBooksByAuthor", authorName);
 
                     } else {
-                        ui.print("Comando no válido");
+                        ui.print("ERROR: Invalid input");
                     }
 
                     break;
