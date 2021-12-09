@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<bibliotecas>
+	<bibliotecaC>
+		<book>
+			<vol>3</vol>
+			<autor>Antoine de Saint-Exupéry</autor>
+			<editorial>Reynal and Hitchcock</editorial>
+			<fecha>07/04/1943</fecha>
+		</book>
+
+		<book>
+			<vol>2</vol>
+			<autor>Maggie Shipstead</autor>
+			<editorial>Amazon</editorial>
+			<fecha>04/05/2021</fecha>
+		</book>
+
+		<book>
+			<vol>5</vol>
+			<autor>Frank Herbert</autor>
+			<editorial>Chilton</editorial>
+			<fecha>29/12/1965</fecha>
+		</book>
+
+		<book>
+			<vol>7</vol>
+			<autor>Frank Herbert</autor>
+			<editorial>Chilton</editorial>
+			<fecha>29/12/1985</fecha>
+		</book>
+	</bibliotecaC>
+</bibliotecas>
