@@ -27,7 +27,6 @@ public class Main {
             UIService ui = new UIService();
             IBooksService booksService;
             String command;
-            Trace trace;
 
             ui.print("Choose a library (A, B, C or blank)");
             String library = scanner.nextLine();
@@ -47,13 +46,13 @@ public class Main {
                     command = scanner.nextLine();
 
                     if (command.matches("Pedir Libro \\w+")) {
-                        String bookTitle = command.split(" ")[2];
+                        String bookTitle = ui.getLookUpValue(command);
 
                         booksViews.printBook(booksService.getBookByName(bookTitle));
                         ui.saveTrace(library, "getBookByName", bookTitle);
 
-                    } else if (command.matches("Pedir Autor \\w+")) {
-                        String authorName = command.split(" ")[2];
+                    } else if (command.matches("Pedir Autor \\w+.*")) {
+                        String authorName = ui.getLookUpValue(command);
 
                         booksViews.printBooks(booksService.getBooksByAuthor(authorName));
                         ui.saveTrace(library, "getBooksByAuthor", authorName);
@@ -74,13 +73,13 @@ public class Main {
                     command = scanner.nextLine();
 
                     if (command.matches("Buscar Titulo \\w+")) {
-                        String Title = command.split(" ")[2];
+                        String Title = ui.getLookUpValue(command);
 
                         booksViews.printBook(booksService.getTitleByName(Title));
                         ui.saveTrace(library, "getTitleByName", Title);
 
-                    } else if (command.matches("Buscar Autor \\w+")) {
-                        String authorName = command.split(" ")[2];
+                    } else if (command.matches("Buscar Autor \\w+.*")) {
+                        String authorName = ui.getLookUpValue(command);
 
                         booksViews.printBooks(booksService.getTitlesByAuthor(authorName));
                         ui.saveTrace(library, "getTitlesByAuthor", authorName);
@@ -101,13 +100,13 @@ public class Main {
                     command = scanner.nextLine();
 
                     if (command.matches("Encontrar Vol \\w+")) {
-                        String Vol = command.split(" ")[2];
+                        String Vol = ui.getLookUpValue(command);
 
                         booksViews.printBook(booksService.getVolByNumber(Vol));
                         ui.saveTrace(library, "getVolByNumber", Vol);
 
                     } else if (command.matches("Encontrar Autor \\w+")) {
-                        String authorName = command.split(" ")[2];
+                        String authorName = ui.getLookUpValue(command);
 
                         booksViews.printBooks(booksService.getVolsByAuthor(authorName));
                         ui.saveTrace(library, "getVolsByAuthor", authorName);
@@ -118,6 +117,9 @@ public class Main {
 
                     break;
             }
+
+            scanner.close();
+
         } catch (Exception e) {
             e.printStackTrace();
         }

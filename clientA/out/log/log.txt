@@ -14,3 +14,10 @@ Destino: Biblioteca A - Metodo: getBookByName - Peticion: Dune - Fecha: 12/09/20
 Destino: Biblioteca A - Metodo: getBookByName - Peticion: Eye - Fecha: 12/09/2021 17:39:47
 Destino: Biblioteca A - Metodo: getBookByName - Peticion: NotFound - Fecha: 12/09/2021 17:39:58
 Destino: Biblioteca A - Metodo: getBookByName - Peticion: Dune - Fecha: 12/09/2021 18:08:44
+Destino: Biblioteca A - Metodo: getBookByName - Peticion: Dune - Fecha: 12/09/2021 22:16:17
+Destino: Biblioteca A - Metodo: getBooksByAuthor - Peticion: Pedir Autor Frank Herbert - Fecha: 12/09/2021 22:43:43
+Destino: Biblioteca A - Metodo: getBooksByAuthor - Peticion: Autor Frank Herbert - Fecha: 12/09/2021 22:44:27
+Destino: Biblioteca A - Metodo: getBooksByAuthor - Peticion: Frank Herbert - Fecha: 12/09/2021 22:44:41
+Destino: Biblioteca A - Metodo: getBookByName - Peticion: Dune - Fecha: 12/09/2021 22:45:47
+Destino: Biblioteca A - Metodo: getBookByName - Peticion: Dune - Fecha: 12/09/2021 22:46:24
+Destino: Biblioteca A - Metodo: getBooksByAuthor - Peticion: Frank Herbert - Fecha: 12/09/2021 22:46:31
