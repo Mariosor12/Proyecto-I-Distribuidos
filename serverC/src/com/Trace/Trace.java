@@ -8,42 +8,47 @@ import java.util.Date;
 import java.text.SimpleDateFormat;
 
 public class Trace {
-    public String origen;
-    public String metodo;
-    public String peticion;
-    public Date fecha;
+    public String departure;
+    public String method;
+    public String lookUpValue;
+    public Date date;
 
-        //Constructor de la clase
-        public Trace(String origen, String metodo, String peticion, Date fecha) {
-            this.origen = origen;
-            this.metodo = metodo;
-            this.peticion = peticion;
-            this.fecha = fecha;
-        }
+    // Constructor de la clase
+    public Trace(String departure, String method, String lookUpValue, Date date) {
+        this.departure = departure;
+        this.method = method;
+        this.lookUpValue = lookUpValue;
+        this.date = date;
+    }
 
-        public void guardarTraza(){
-        //Definimos la clase File y FileWriter para buscar y escribir en el archivo
-        File archivo;
-        FileWriter fw = null;
-        SimpleDateFormat df = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
+    public void saveTrace() {
+        FileWriter fileWriter = null;
+
         try {
-            //Buscamos el archivo, si no esta se crea
-            archivo = new File("/home/mario/Proyecto-I-Distribuidos/serverA/src/com/log/Slogs.txt");
-            fw = new FileWriter(archivo, true);
-            BufferedWriter bw = new BufferedWriter(fw);
-            //Escribmos el log para cuando se vaya a realizar una respuesta
-            bw.write("Origen: Biblioteca " + this.origen + " - Metodo: " + this.metodo + " - Peticion: " + this.peticion + " - Fecha: " + df.format(fecha) + "\n");
-            bw.close();
-        }catch (IOException e) {
+            SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
+
+            String filePath = new File("").getAbsolutePath().concat("\\log\\log.txt");
+            File file = new File(filePath);
+            fileWriter = new FileWriter(file, true);
+            BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+
+            bufferedWriter.write("Salida: Biblioteca " + this.departure + " - Metodo: "
+                    + this.method + " - Peticion: "
+                    + this.lookUpValue + " - Fecha: " + dateFormat.format(date) + "\n");
+
+            bufferedWriter.close();
+
+        } catch (IOException e) {
             e.printStackTrace();
-	    }finally {
-            if (fw != null) {
+
+        } finally {
+            if (fileWriter != null) {
                 try {
-                    fw.close();
-		} catch (IOException e) {
+                    fileWriter.close();
+                } catch (IOException e) {
                     e.printStackTrace();
-		}
+                }
             }
-	    }
         }
+    }
 }
