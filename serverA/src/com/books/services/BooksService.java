@@ -33,6 +33,7 @@ public class BooksService extends UnicastRemoteObject implements IBooksService {
             trace = new Trace("A", "getBookByName", name, new Date());
             trace.saveTrace();
 
+            book.stop();
             return book;
           }
         }
