@@ -23,7 +23,7 @@ public class Book implements Serializable {
         + this.date + " (lib " + this.library + ")\n";
   }
 
-  public String getName() {
+  public String getBookName() {
     return this.name;
   }
 

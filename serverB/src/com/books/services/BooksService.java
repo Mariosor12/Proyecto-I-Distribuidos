@@ -24,7 +24,7 @@ public class BooksService extends UnicastRemoteObject implements IBooksService {
 
   public Book getTitleByName(String name) {
     for (Book book : this.books) {
-      if (name.equals(book.getName())) {
+      if (name.equals(book.getBookName())) {
         // trace = new Trace("B", "getTitleByName", name, new Date());
         // trace.guardarTraza();
         return book;

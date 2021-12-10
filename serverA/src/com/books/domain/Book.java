@@ -2,7 +2,7 @@ package com.books.domain;
 
 import java.io.Serializable;
 
-public class Book implements Serializable {
+public class Book extends Thread implements Serializable {
   private static final long serialVersionUID = 1L;
   String name;
   String author;
@@ -23,7 +23,7 @@ public class Book implements Serializable {
         + this.date + " (lib " + this.library + ")\n";
   }
 
-  public String getName() {
+  public String getBookName() {
     return this.name;
   }
 
