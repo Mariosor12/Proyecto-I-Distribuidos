@@ -43,7 +43,7 @@ public class Main {
 
                     command = scanner.nextLine();
 
-                    if (command.matches("Pedir Libro \\w+")) {
+                    if (command.matches("Pedir Libro \\w+.*")) {
                         String bookTitle = ui.getLookUpValue(command);
 
                         booksViews.printBook(booksService.getBookByName(bookTitle));
@@ -70,7 +70,7 @@ public class Main {
 
                     command = scanner.nextLine();
 
-                    if (command.matches("Buscar Titulo \\w+")) {
+                    if (command.matches("Buscar Titulo \\w+.*")) {
                         String Title = ui.getLookUpValue(command);
 
                         booksViews.printBook(booksService.getTitleByName(Title));
@@ -97,13 +97,13 @@ public class Main {
 
                     command = scanner.nextLine();
 
-                    if (command.matches("Encontrar Vol \\w+")) {
+                    if (command.matches("Encontrar Vol \\w+.*")) {
                         String Vol = ui.getLookUpValue(command);
 
                         booksViews.printBook(booksService.getVolByNumber(Vol));
                         ui.saveTrace(library, "getVolByNumber", Vol);
 
-                    } else if (command.matches("Encontrar Autor \\w+")) {
+                    } else if (command.matches("Encontrar Autor \\w+.*")) {
                         String authorName = ui.getLookUpValue(command);
 
                         booksViews.printBooks(booksService.getVolsByAuthor(authorName));
