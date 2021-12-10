@@ -57,8 +57,8 @@ public class BooksService extends UnicastRemoteObject implements IBooksService {
       synchronized (this) {
         for (Book book : this.books) {
           if (author.equals(book.getAuthor())) {
-            book.start();
-            book.join();
+            // book.start();
+            // book.join();
 
             books.add(book);
           }
