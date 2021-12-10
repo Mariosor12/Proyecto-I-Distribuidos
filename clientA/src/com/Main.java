@@ -71,27 +71,23 @@ public class Main {
                     ui.print("1. Buscar Titulo [TITULO]");
                     ui.print("2. Buscar Autor [AUTOR]");
 
-                    // command = scanner.nextInt();
-                    // scanner.nextLine();
+                    command = scanner.nextLine();
 
-                    // switch (command) {
-                    // case 1:
-                    // ui.print("Book title?");
-                    // String bookTitle = scanner.nextLine();
+                    if (command.matches("Buscar Titulo \\w+")) {
+                        String Title = command.split(" ")[2];
 
-                    // booksViews.printBook(booksService.getTitleByName(bookTitle));
-                    // ui.saveTrace(library, "getTitleByName", bookTitle);
-                    // break;
-                    // case 2:
-                    // ui.print("Author name?");
-                    // String authorName = scanner.nextLine();
+                        booksViews.printBook(booksService.getTitleByName(Title));
+                        ui.saveTrace(library, "getTitleByName", Title);
 
-                    // booksViews.printBooks(booksService.getTitlesByAuthor(authorName));
-                    // ui.saveTrace(library, "getTitlesByAuthor", authorName);
-                    // break;
-                    // default:
-                    // break;
-                    // }
+                    } else if (command.matches("Buscar Autor \\w+")) {
+                        String authorName = command.split(" ")[2];
+
+                        booksViews.printBooks(booksService.getTitlesByAuthor(authorName));
+                        ui.saveTrace(library, "getTitlesByAuthor", authorName);
+
+                    } else {
+                        ui.print("ERROR: Invalid input");
+                    }
 
                     break;
 
@@ -102,31 +98,25 @@ public class Main {
                     ui.print("1. Encontrar Vol [LIBRO]");
                     ui.print("2. Encontrar Autor [AUTOR]");
 
-                    // command = scanner.nextInt();
-                    // scanner.nextLine();
+                    command = scanner.nextLine();
 
-                    // switch (command) {
-                    // case 1:
-                    // ui.print("Book title?");
-                    // String bookTitle = scanner.nextLine();
+                    if (command.matches("Encontrar Vol \\w+")) {
+                        String Vol = command.split(" ")[2];
 
-                    // booksViews.printBook(booksService.getTitleByName(bookTitle));
-                    // ui.saveTrace(library, "getTitleByName", bookTitle);
-                    // break;
-                    // case 2:
-                    // ui.print("Author name?");
-                    // String authorName = scanner.nextLine();
+                        booksViews.printBook(booksService.getVolByNumber(Vol));
+                        ui.saveTrace(library, "getVolByNumber", Vol);
 
-                    // booksViews.printBooks(booksService.getTitlesByAuthor(authorName));
-                    // ui.saveTrace(library, "getTitlesByAuthor", authorName);
-                    // break;
-                    // default:
-                    // break;
-                    // }
+                    } else if (command.matches("Encontrar Autor \\w+")) {
+                        String authorName = command.split(" ")[2];
+
+                        booksViews.printBooks(booksService.getVolsByAuthor(authorName));
+                        ui.saveTrace(library, "getVolsByAuthor", authorName);
+
+                    } else {
+                        ui.print("ERROR: Invalid input");
+                    }
 
                     break;
-                default:
-
             }
         } catch (Exception e) {
             e.printStackTrace();
