@@ -23,6 +23,7 @@ public class BooksService extends UnicastRemoteObject implements IBooksService {
     return this.books;
   }
 
+  @Override
   public Book getBookByName(String name) {
     try {
       synchronized (this) {
