@@ -27,7 +27,7 @@ public class BooksService extends UnicastRemoteObject implements IBooksService {
     try {
       synchronized (this) {
         thread.start();
-        thread.join();
+        thread.join(1000);
       }
 
       for (Book book : this.books) {
@@ -47,6 +47,8 @@ public class BooksService extends UnicastRemoteObject implements IBooksService {
       e.printStackTrace();
     }
 
+    thread.interrupt();
+    thread.stop();
     return null;
   }
 
