@@ -1,0 +1,4 @@
+Salida: Biblioteca C - Metodo: getVolsByAuthor - Peticion: Frank Herbert - Fecha: 12/10/2021 11:22:35
+Salida: Biblioteca C - Metodo: getVolByNumber - Peticion: 2 - Fecha: 12/10/2021 11:23:29
+Salida: Biblioteca C - Metodo: getVolByNumber - Peticion: 2 - Fecha: 12/10/2021 12:06:02
+Salida: Biblioteca C - Metodo: getVolsByAuthor - Peticion: Frank Herbert - Fecha: 12/10/2021 12:06:21

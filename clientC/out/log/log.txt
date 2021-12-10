@@ -1,0 +1,2 @@
+Destino: Biblioteca B - Metodo: getTitleByName - Peticion: El Principito - Fecha: 12/10/2021 13:31:19
+Destino: Biblioteca B - Metodo: getTitlesByAuthor - Peticion: Maggie Shipstead - Fecha: 12/10/2021 13:31:58
