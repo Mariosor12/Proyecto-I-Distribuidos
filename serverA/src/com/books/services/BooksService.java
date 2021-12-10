@@ -17,6 +17,7 @@ public class BooksService extends UnicastRemoteObject implements IBooksService {
   public BooksService() throws RemoteException {
     super();
     this.books = this.booksRepository.getBooks();
+    thread.start();
   }
 
   public List<Book> getBooks() {
@@ -26,7 +27,6 @@ public class BooksService extends UnicastRemoteObject implements IBooksService {
   public Book getBookByName(String name) {
     try {
       synchronized (this) {
-        thread.start();
         thread.join(1000);
       }
 
