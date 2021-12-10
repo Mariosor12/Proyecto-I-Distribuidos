@@ -38,6 +38,8 @@ public class BooksService extends UnicastRemoteObject implements IBooksService {
             return book;
           }
         }
+        trace = new Trace("B", "getTitleByName", "No book found", new Date());
+        trace.saveTrace();
       }
     } catch (Exception e) {
       System.out.println("ERROR: Resource is in use");
@@ -59,12 +61,17 @@ public class BooksService extends UnicastRemoteObject implements IBooksService {
             books.add(book);
           }
         }
-
-        trace = new Trace("B", "getTitlesByAuthor", author, new Date());
-        trace.saveTrace();
       }
     } catch (Exception e) {
       System.out.println("ERROR: Resource is in use");
+    }
+
+    if (books.isEmpty()) {
+      trace = new Trace("B", "getTitlesByAuthor", "No books found", new Date());
+      trace.saveTrace();
+    } else {
+      trace = new Trace("B", "getTitlesByAuthor", author, new Date());
+      trace.saveTrace();
     }
 
     return books;
