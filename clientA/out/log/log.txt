@@ -58,3 +58,5 @@ Destino: Biblioteca A - Metodo: getBookByName - Peticion: Dune - Fecha: 12/10/20
 Destino: Biblioteca A - Metodo: getBookByName - Peticion: Dune - Fecha: 12/10/2021 11:43:02
 Destino: Biblioteca A - Metodo: getBookByName - Peticion: Dune - Fecha: 12/10/2021 11:43:57
 Destino: Biblioteca A - Metodo: getBookByName - Peticion: Dune - Fecha: 12/10/2021 11:44:07
+Destino: Biblioteca A - Metodo: getBookByName - Peticion: Dune - Fecha: 12/10/2021 11:44:38
+Destino: Biblioteca A - Metodo: getBookByName - Peticion: Dune - Fecha: 12/10/2021 11:44:43
