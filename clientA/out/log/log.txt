@@ -38,3 +38,4 @@ Destino: Biblioteca C - Metodo: getVolByNumber - Peticion: 2 - Fecha: 12/10/2021
 Destino: Biblioteca C - Metodo: getVolsByAuthor - Peticion: Frank Herbert - Fecha: 12/10/2021 10:19:33
 Destino: Biblioteca C - Metodo: getVolsByAuthor - Peticion: Frank Herbert - Fecha: 12/10/2021 10:29:12
 Destino: Biblioteca B - Metodo: getTitleByName - Peticion: Dune - Fecha: 12/10/2021 10:33:51
+Destino: Biblioteca A - Metodo: getBookByName - Peticion: Dune - Fecha: 12/10/2021 10:45:59
