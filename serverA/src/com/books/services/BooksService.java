@@ -39,7 +39,8 @@ public class BooksService extends UnicastRemoteObject implements IBooksService {
       }
 
     } catch (Exception e) {
-      System.out.print("ERROR: Resource is in use");
+      System.out.println("ERROR: Resource is in use");
+      e.printStackTrace();
     }
 
     return null;
@@ -63,7 +64,8 @@ public class BooksService extends UnicastRemoteObject implements IBooksService {
         trace.saveTrace();
       }
     } catch (Exception e) {
-      System.out.print("ERROR: Resource is in use");
+      System.out.println("ERROR: Resource is in use");
+
     }
 
     return books;
