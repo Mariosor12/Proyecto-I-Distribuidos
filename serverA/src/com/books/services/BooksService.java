@@ -68,7 +68,6 @@ public class BooksService extends UnicastRemoteObject implements IBooksService {
 
     } catch (Exception e) {
       System.out.println("ERROR: Resource is in use");
-
     }
 
     return books;
