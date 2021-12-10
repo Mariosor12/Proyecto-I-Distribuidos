@@ -28,6 +28,7 @@ public class Trace {
             SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
 
             String filePath = new File("").getAbsolutePath().concat("\\log\\log.txt");
+            System.out.println(filePath);
             File file = new File(filePath);
             fileWriter = new FileWriter(file, true);
             BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
