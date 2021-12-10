@@ -1,4 +1,4 @@
-package com.Trace;
+package com.trace;
 
 import java.io.File;
 import java.io.FileWriter;

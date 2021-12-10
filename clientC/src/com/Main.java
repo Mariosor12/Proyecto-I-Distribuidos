@@ -6,7 +6,7 @@ import java.util.*;
 import com.books.services.IBooksService;
 import com.books.views.BooksViews;
 import com.ui.UIService;
-import com.Trace.Trace;
+import com.trace.Trace;
 
 public class Main {
     private static IBooksService remoteService(String URL) {
@@ -18,6 +18,7 @@ public class Main {
 
         return null;
     }
+
     public static void main(String[] args) {
         try {
             BooksViews booksViews = new BooksViews();
@@ -26,7 +27,7 @@ public class Main {
             IBooksService booksService;
             String command;
             Trace trace;
-    
+
             ui.print("Choose a library (A, B, C or blank)");
             String library = scanner.nextLine();
 
@@ -36,31 +37,31 @@ public class Main {
 
             switch (library) {
                 case "C":
-                booksService = remoteService(Constants.URL_C);
+                    booksService = remoteService(Constants.URL_C);
 
-                ui.print("Available commands for library " + library);
-                ui.print("1. Encontrar Vol [LIBRO]");
-                ui.print("2. Encontrar Autor [AUTOR]");
+                    ui.print("Available commands for library " + library);
+                    ui.print("1. Encontrar Vol [LIBRO]");
+                    ui.print("2. Encontrar Autor [AUTOR]");
 
-                command = scanner.nextLine();
+                    command = scanner.nextLine();
 
-                if (command.matches("Encontrar Vol \\w+")) {
-                    String Vol = command.split(" ")[2];
+                    if (command.matches("Encontrar Vol \\w+")) {
+                        String Vol = ui.getLookUpValue(command);
 
-                    booksViews.printBook(booksService.getVolByNumber(Vol));
-                    ui.saveTrace(library, "getVolByNumber", Vol);
+                        booksViews.printBook(booksService.getVolByNumber(Vol));
+                        ui.saveTrace(library, "getVolByNumber", Vol);
 
-                } else if (command.matches("Encontrar Autor \\w+")) {
-                    String authorName = command.split(" ")[2];
+                    } else if (command.matches("Encontrar Autor \\w+")) {
+                        String authorName = ui.getLookUpValue(command);
 
-                    booksViews.printBooks(booksService.getVolsByAuthor(authorName));
-                    ui.saveTrace(library, "getVolsByAuthor", authorName);
+                        booksViews.printBooks(booksService.getVolsByAuthor(authorName));
+                        ui.saveTrace(library, "getVolsByAuthor", authorName);
 
-                } else {
-                    ui.print("ERROR: Invalid input");
-                }
+                    } else {
+                        ui.print("ERROR: Invalid input");
+                    }
 
-                break;
+                    break;
 
                 case "B":
                     booksService = remoteService(Constants.URL_B);
@@ -72,13 +73,13 @@ public class Main {
                     command = scanner.nextLine();
 
                     if (command.matches("Buscar Titulo \\w+")) {
-                        String Title = command.split(" ")[2];
+                        String Title = ui.getLookUpValue(command);
 
                         booksViews.printBook(booksService.getTitleByName(Title));
                         ui.saveTrace(library, "getTitleByName", Title);
 
                     } else if (command.matches("Buscar Autor \\w+")) {
-                        String authorName = command.split(" ")[2];
+                        String authorName = ui.getLookUpValue(command);
 
                         booksViews.printBooks(booksService.getTitlesByAuthor(authorName));
                         ui.saveTrace(library, "getTitlesByAuthor", authorName);
@@ -87,7 +88,7 @@ public class Main {
                         ui.print("ERROR: Invalid input");
                     }
 
-                break;
+                    break;
 
                 case "A":
                     booksService = remoteService(Constants.URL_C);
@@ -99,13 +100,13 @@ public class Main {
                     command = scanner.nextLine();
 
                     if (command.matches("Pedir Vol \\w+")) {
-                        String Vol = command.split(" ")[2];
+                        String Vol = ui.getLookUpValue(command);
 
                         booksViews.printBook(booksService.getVolByNumber(Vol));
                         ui.saveTrace(library, "getVolByNumber", Vol);
 
                     } else if (command.matches("Pedir Autor \\w+")) {
-                        String authorName = command.split(" ")[2];
+                        String authorName = ui.getLookUpValue(command);
 
                         booksViews.printBooks(booksService.getVolsByAuthor(authorName));
                         ui.saveTrace(library, "getVolsByAuthor", authorName);
