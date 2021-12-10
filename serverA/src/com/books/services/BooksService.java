@@ -64,12 +64,18 @@ public class BooksService extends UnicastRemoteObject implements IBooksService {
           }
         }
 
-        trace = new Trace("A", "getBooksByAuthor", author, new Date());
-        trace.saveTrace();
       }
 
     } catch (Exception e) {
       System.out.println("ERROR: Resource is in use");
+    }
+
+    if (books.isEmpty()) {
+      trace = new Trace("A", "getBooksByAuthor", "No books found", new Date());
+      trace.saveTrace();
+    } else {
+      trace = new Trace("A", "getBooksByAuthor", author, new Date());
+      trace.saveTrace();
     }
 
     return books;
