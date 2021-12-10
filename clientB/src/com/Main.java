@@ -26,7 +26,6 @@ public class Main {
             UIService ui = new UIService();
             IBooksService booksService;
             String command;
-            Trace trace;
 
             ui.print("Choose a library (A, B, C or blank)");
             String library = scanner.nextLine();
@@ -36,33 +35,6 @@ public class Main {
             }
 
             switch (library) {
-                case "B":
-                    booksService = remoteService(Constants.URL_B);
-
-                    ui.print("Available commands for library " + library);
-                    ui.print("1. Buscar Titulo [TITULO]");
-                    ui.print("2. Buscar Autor [AUTOR]");
-
-                    command = scanner.nextLine();
-
-                    if (command.matches("Buscar Titulo \\w+")) {
-                        String Title = ui.getLookUpValue(command);
-
-                        booksViews.printBook(booksService.getTitleByName(Title));
-                        ui.saveTrace(library, "getTitleByName", Title);
-
-                    } else if (command.matches("Buscar Autor \\w+")) {
-                        String authorName = ui.getLookUpValue(command);
-
-                        booksViews.printBooks(booksService.getTitlesByAuthor(authorName));
-                        ui.saveTrace(library, "getTitlesByAuthor", authorName);
-
-                    } else {
-                        ui.print("ERROR: Invalid input");
-                    }
-
-                    break;
-
                 case "A":
                     booksService = remoteService(Constants.URL_A);
 
@@ -78,7 +50,7 @@ public class Main {
                         booksViews.printBook(booksService.getBookByName(bookTitle));
                         ui.saveTrace(library, "getBookByName", bookTitle);
 
-                    } else if (command.matches("Pedir Autor \\w+")) {
+                    } else if (command.matches("Pedir Autor \\w+.*")) {
                         String authorName = ui.getLookUpValue(command);
 
                         booksViews.printBooks(booksService.getBooksByAuthor(authorName));
@@ -90,11 +62,38 @@ public class Main {
 
                     break;
 
+                case "B":
+                    booksService = remoteService(Constants.URL_B);
+
+                    ui.print("Available commands for library " + library);
+                    ui.print("1. Buscar Titulo [TITULO]");
+                    ui.print("2. Buscar Autor [AUTOR]");
+
+                    command = scanner.nextLine();
+
+                    if (command.matches("Buscar Titulo \\w+")) {
+                        String Title = ui.getLookUpValue(command);
+
+                        booksViews.printBook(booksService.getTitleByName(Title));
+                        ui.saveTrace(library, "getTitleByName", Title);
+
+                    } else if (command.matches("Buscar Autor \\w+.*")) {
+                        String authorName = ui.getLookUpValue(command);
+
+                        booksViews.printBooks(booksService.getTitlesByAuthor(authorName));
+                        ui.saveTrace(library, "getTitlesByAuthor", authorName);
+
+                    } else {
+                        ui.print("ERROR: Invalid input");
+                    }
+
+                    break;
+
                 case "C":
                     booksService = remoteService(Constants.URL_C);
 
                     ui.print("Available commands for library " + library);
-                    ui.print("1. Encontrar Vol [LIBRO]");
+                    ui.print("1. Encontrar Vol [VOL]");
                     ui.print("2. Encontrar Autor [AUTOR]");
 
                     command = scanner.nextLine();
@@ -116,8 +115,9 @@ public class Main {
                     }
 
                     break;
-
             }
+
+            scanner.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
