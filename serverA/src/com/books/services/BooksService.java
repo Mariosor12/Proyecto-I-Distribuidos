@@ -40,14 +40,13 @@ public class BooksService extends UnicastRemoteObject implements IBooksService {
         }
 
         thread.interrupt();
+        return null;
       }
 
     } catch (Exception e) {
       System.out.println("ERROR: Resource is in use");
       e.printStackTrace();
     }
-
-    return null;
   }
 
   public List<Book> getBooksByAuthor(String author) {
