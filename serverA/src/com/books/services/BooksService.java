@@ -26,18 +26,20 @@ public class BooksService extends UnicastRemoteObject implements IBooksService {
   public Book getBookByName(String name) {
     try {
       synchronized (this) {
+        thread.start();
+        thread.join();
+
         for (Book book : this.books) {
           if (name.equals(book.getBookName())) {
-            thread.start();
-            thread.join();
 
             trace = new Trace("A", "getBookByName", name, new Date());
             trace.saveTrace();
 
-            thread.interrupt();
             return book;
           }
         }
+
+        thread.interrupt();
       }
 
     } catch (Exception e) {
