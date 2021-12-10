@@ -26,3 +26,10 @@ Destino: Biblioteca B - Metodo: getTitleByName - Peticion: Dune - Fecha: 12/10/2
 Destino: Biblioteca C - Metodo: getVolByNumber - Peticion: 1 - Fecha: 12/10/2021 00:04:01
 Destino: Biblioteca C - Metodo: getVolByNumber - Peticion: 2 - Fecha: 12/10/2021 00:04:23
 Destino: Biblioteca B - Metodo: getTitlesByAuthor - Peticion: Frank Herber - Fecha: 12/10/2021 00:11:02
+Destino: Biblioteca B - Metodo: getTitlesByAuthor - Peticion: Frank Herbert - Fecha: 12/10/2021 00:13:22
+Destino: Biblioteca A - Metodo: getBookByName - Peticion: Dune - Fecha: 12/10/2021 00:15:45
+Destino: Biblioteca A - Metodo: getBooksByAuthor - Peticion: Frank Herbert - Fecha: 12/10/2021 00:16:08
+Destino: Biblioteca A - Metodo: getBooksByAuthor - Peticion: Frank Herbert - Fecha: 12/10/2021 00:16:18
+Destino: Biblioteca B - Metodo: getTitleByName - Peticion: Dune - Fecha: 12/10/2021 00:16:28
+Destino: Biblioteca B - Metodo: getTitlesByAuthor - Peticion: Frank Herbert - Fecha: 12/10/2021 00:16:42
+Destino: Biblioteca C - Metodo: getVolByNumber - Peticion: 2 - Fecha: 12/10/2021 00:16:59

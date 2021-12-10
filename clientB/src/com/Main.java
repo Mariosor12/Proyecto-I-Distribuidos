@@ -6,7 +6,6 @@ import java.util.*;
 import com.books.services.IBooksService;
 import com.books.views.BooksViews;
 import com.ui.UIService;
-import com.trace.Trace;
 
 public class Main {
     private static IBooksService remoteService(String URL) {
@@ -31,7 +30,7 @@ public class Main {
             String library = scanner.nextLine();
 
             if (library.isEmpty()) {
-                library = "B";
+                library = "A";
             }
 
             switch (library) {
@@ -93,7 +92,7 @@ public class Main {
                     booksService = remoteService(Constants.URL_C);
 
                     ui.print("Available commands for library " + library);
-                    ui.print("1. Encontrar Vol [VOL]");
+                    ui.print("1. Encontrar Vol [V]");
                     ui.print("2. Encontrar Autor [AUTOR]");
 
                     command = scanner.nextLine();
@@ -118,6 +117,7 @@ public class Main {
             }
 
             scanner.close();
+
         } catch (Exception e) {
             e.printStackTrace();
         }
