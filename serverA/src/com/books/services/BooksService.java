@@ -28,19 +28,19 @@ public class BooksService extends UnicastRemoteObject implements IBooksService {
     try {
       synchronized (this) {
         thread.join();
-      }
 
-      for (Book book : this.books) {
-        if (name.equals(book.getBookName())) {
+        for (Book book : this.books) {
+          if (name.equals(book.getBookName())) {
 
-          trace = new Trace("A", "getBookByName", name, new Date());
-          trace.saveTrace();
+            trace = new Trace("A", "getBookByName", name, new Date());
+            trace.saveTrace();
 
-          return book;
+            return book;
+          }
         }
-      }
 
-      return null;
+        return null;
+      }
 
     } catch (Exception e) {
       System.out.println("ERROR: Resource is in use");
