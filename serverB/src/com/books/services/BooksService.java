@@ -12,10 +12,12 @@ public class BooksService extends UnicastRemoteObject implements IBooksService {
   BooksXMLRepository booksRepository = new BooksXMLRepository();
   List<Book> books;
   Trace trace;
+  Thread thread = new Thread();
 
   public BooksService() throws RemoteException {
     super();
     this.books = this.booksRepository.getBooks();
+    thread.start();
   }
 
   public List<Book> getBooks() {
@@ -25,10 +27,10 @@ public class BooksService extends UnicastRemoteObject implements IBooksService {
   public Book getTitleByName(String name) {
     try {
       synchronized (this) {
+        thread.join();
+
         for (Book book : this.books) {
           if (name.equals(book.getBookName())) {
-            book.start();
-            book.join();
 
             trace = new Trace("B", "getTitleByName", name, new Date());
             trace.saveTrace();
@@ -49,14 +51,15 @@ public class BooksService extends UnicastRemoteObject implements IBooksService {
 
     try {
       synchronized (this) {
+        thread.join();
+
         for (Book book : this.books) {
           if (author.equals(book.getAuthor())) {
-            book.start();
-            book.join();
 
             books.add(book);
           }
         }
+
         trace = new Trace("B", "getTitlesByAuthor", author, new Date());
         trace.saveTrace();
       }
