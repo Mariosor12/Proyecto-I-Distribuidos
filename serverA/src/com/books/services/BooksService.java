@@ -27,7 +27,7 @@ public class BooksService extends UnicastRemoteObject implements IBooksService {
   public Book getBookByName(String name) {
     try {
       synchronized (this) {
-        thread.join(1000);
+        thread.join();
       }
 
       for (Book book : this.books) {
@@ -47,8 +47,6 @@ public class BooksService extends UnicastRemoteObject implements IBooksService {
       e.printStackTrace();
     }
 
-    thread.interrupt();
-    thread.stop();
     return null;
   }
 
