@@ -16,4 +16,8 @@ public interface IBooksService extends Remote {
   public Book getTitleByName(String name) throws RemoteException;
 
   public List<Book> getTitlesByAuthor(String author) throws RemoteException;
+
+  public Book getVolByNumber(String name) throws RemoteException;
+
+  public List<Book> getVolsByAuthor(String author) throws RemoteException;
 }

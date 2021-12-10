@@ -5,13 +5,13 @@ import java.io.Serializable;
 
 public class Book implements Serializable {
   private static final long serialVersionUID = 1L;
-  Integer name;
+  String name;
   String author;
   String editorial;
   String date;
   String library;
 
-  public Book(Integer name, String author, String editorial, String date, String library) {
+  public Book(String name, String author, String editorial, String date, String library) {
     this.name = name;
     this.author = author;
     this.editorial = editorial;
@@ -24,7 +24,7 @@ public class Book implements Serializable {
         + this.date + " (lib " + this.library + ")";
   }
 
-  public Integer getName() {
+  public String getName() {
     return this.name;
   }
 
